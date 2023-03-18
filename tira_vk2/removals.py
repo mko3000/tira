@@ -9,6 +9,7 @@ def find(s, k):
     c_locs = {}
     for i in range(len(s)):
         locs[s[i]].append(i)
+        
     print(locs)
 
     if as_removed == k and bs_removed == k and cs_removed == k:

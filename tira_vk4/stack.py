@@ -34,3 +34,4 @@ if __name__ == "__main__":
     print(s.pop()) # 1
 
 # pidetään kirjaa siitä, mitä lukuja on kasvatettu ja kuinka paljolla
+# pidetään kirjaa siitä, montako kertaa on kasvatettu, ja kuinka pitkää 

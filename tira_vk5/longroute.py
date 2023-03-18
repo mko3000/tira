@@ -24,9 +24,9 @@ def most_commands(s):
     return max(command_list)
 
 def count(s,k):
-    p = most_commands(s)    
-    diff = count_loop(s*(p+1))-count_loop(s*p)
-    return count_loop(s*min(p,k)) + max(0,(k-p))*diff
+    mc = most_commands(s)    
+    diff = count_loop(s*(mc+1))-count_loop(s*mc)
+    return count_loop(s*min(mc,k)) + max(0,(k-mc))*diff
     
 
 if __name__ == "__main__":
