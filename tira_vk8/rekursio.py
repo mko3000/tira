@@ -1,7 +1,7 @@
 import time
 
 def f(n):
-    print(n,f(n-1)+f(n-2)+f(n-3))
+    print(n)
     if n <= 2:
         return n
     return f(n-1)+f(n-2)+f(n-3)
