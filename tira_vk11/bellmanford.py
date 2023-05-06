@@ -7,39 +7,17 @@
 from random import randint, shuffle
 import time
 
-
-
-# kaarilistaesitys
 def tee_verkko(n):
-    for a in range(1, n+1):
-        for b in range(a+1, a+9):
-            if b <= n:
-                kaaret.append(
-                    {"alku": a, "loppu": b, "paino": randint(1, 1000)})
+    for a in range(1,n+1):
+        for b in range(a+1,a+9):
+            if b<=n:
+                kaaret.append({"alku":a,"loppu":b,"paino":randint(1,1000)})
     shuffle(kaaret)
 
-# vieruslistaesitys
-def tee_vierusverkko(n):
-    verkko = {}
-    for a in range(1, n+1):
-        verkko[a] = []
-    for a in range(1, n+1):
-        for b in range(a+1, a+9):
-            if b <= n:
-                paino = randint(1,1000)
-                verkko[a].append((b, paino))
-                verkko[b].append((a, paino))
-    return verkko
-
-
-n = 20
+n = 5000
 kaaret = []
-vieruslista = tee_vierusverkko(n)
-# tee_verkko(n)
-# print(kaaret)
-#print(vieruslista)
-for solmu in vieruslista:
-    print(f'{solmu}:{vieruslista[solmu]}')
+tee_verkko(n)
+#print(kaaret)
 
 etaisyys = [float("Inf")] * (n+1)
 
@@ -47,7 +25,6 @@ aloitus = 1
 etaisyys[aloitus] = 0
 
 alkuaika = time.time()
-
 while True:
     muutos = False
     for kaari in kaaret:
@@ -58,7 +35,6 @@ while True:
             muutos = True
     if not muutos:
         break
-
 loppuaika = time.time()
 
 etaisyys = etaisyys[1:]
