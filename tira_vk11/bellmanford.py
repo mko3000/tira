@@ -12,12 +12,12 @@ def tee_verkko(n):
         for b in range(a+1,a+9):
             if b<=n:
                 kaaret.append({"alku":a,"loppu":b,"paino":randint(1,1000)})
-    shuffle(kaaret)
+    #shuffle(kaaret)
 
-n = 5000
+n = 20
 kaaret = []
 tee_verkko(n)
-#print(kaaret)
+print(kaaret)
 
 etaisyys = [float("Inf")] * (n+1)
 

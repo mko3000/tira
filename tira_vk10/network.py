@@ -7,14 +7,18 @@ class Network:
         self.network[b].append(a)
 
     def best_route(self,a,b):
+        print(self.network)
+        self.path =[]
         self.queue = []
         self.dist = [-1 for _ in range(len(self.network)+1)]
         self.seen = [False for _ in range(len(self.network)+1)]
         self.leveyshaku(a)
+        print(self.path)
         return self.dist[b]
 
     def leveyshaku(self,start):
         self.queue.append(start)
+        self.path.append(start)
         self.seen[start] = True
         self.dist[start] = 0
         while len(self.queue) != 0:
@@ -22,7 +26,9 @@ class Network:
             for neighbour in self.network[node]:
                 if self.seen[neighbour]:
                     continue
+                
                 self.queue.append(neighbour)
+                self.path.append(neighbour)
                 self.seen[neighbour] = True
                 self.dist[neighbour] = self.dist[node]+1
 
